@@ -2,7 +2,7 @@ CC := gcc
 CFLAGS := -Wall -Wextra -o3
 
 TARGET := example
-SOURCES := example.c 
+SOURCES := dd_matrix_operations.c example.c 
 HEADERS := dd_matrix.h dd_matrix_operations.h 
 OBJECTS := $(SOURCES:.c=.o)
 
