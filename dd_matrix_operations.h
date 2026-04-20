@@ -9,5 +9,7 @@
 #define APE( m, x, y ) ( (m)->p[ (x) * (m)->col + (y) ] ) 
 
 void sum_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
+void diff_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
+
 
 #endif

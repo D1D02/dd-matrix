@@ -32,7 +32,9 @@ void main( void )
 
     printf("The element (1,1) is: %f\r\n", ACCESS_ELEMENT( matrix1, 1, 1 ) );
 
-    printf("\r\n2.Test for matrices sum.\n\r");
+    printf("\r\n2.Test for matrices sum and difference.\n\r");
     sum_matrix( &matrix1, &matrix2, &matrix2);
+    printf("The element (1,1) is: %f\r\n", AE( matrix2, 1, 1 ) );
+    diff_matrix( &matrix2, &matrix1, &matrix2);
     printf("The element (1,1) is: %f\r\n", AE( matrix2, 1, 1 ) );
 }
