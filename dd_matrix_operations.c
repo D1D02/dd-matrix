@@ -10,6 +10,6 @@ void sum_matrix( dd_matrix * m1, dd_matrix * m2, dd_matrix * r )
 
     for( matrix_dimension i = 0; i < m1->row; ++i )
         for( matrix_dimension j = 0; j < m1->col; ++j )
-            AE_POINTER( r, i, j ) = AE_POINTER( m1, i, j ) + AE_POINTER( m2, i, j );
+            APE( r, i, j ) = APE( m1, i, j ) + APE( m2, i, j );
 
 }
