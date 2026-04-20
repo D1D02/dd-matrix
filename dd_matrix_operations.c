@@ -1,7 +1,7 @@
 #include "dd_matrix_operations.h"
 
 
-void sum_matrix( dd_matrix * m1, dd_matrix * m2, dd_matrix * r ) 
+void dd_sum_matrix( dd_matrix * m1, dd_matrix * m2, dd_matrix * r ) 
 {
 
     if( !m1 || !m2 || !r ) return;
@@ -14,7 +14,7 @@ void sum_matrix( dd_matrix * m1, dd_matrix * m2, dd_matrix * r )
 
 }
 
-void diff_matrix( dd_matrix * m1, dd_matrix * m2, dd_matrix * r ) 
+void dd_diff_matrix( dd_matrix * m1, dd_matrix * m2, dd_matrix * r ) 
 {
 
     if( !m1 || !m2 || !r ) return;

@@ -8,8 +8,8 @@
 #define ACCESS_POINTED_ELEMENT( m, x, y ) ( (m)->p[ (x) * (m)->col + (y) ] ) 
 #define APE( m, x, y ) ( (m)->p[ (x) * (m)->col + (y) ] ) 
 
-void sum_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
-void diff_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
+void dd_sum_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
+void dd_diff_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
 
 
 #endif
