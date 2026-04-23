@@ -1,6 +1,6 @@
 #include "dd_matrix_operations.h"
 
-
+/* Matrix operations */
 dd_error dd_sum_matrix( dd_matrix * m1, dd_matrix * m2, dd_matrix * r ) 
 {
 
@@ -30,5 +30,22 @@ dd_error dd_diff_matrix( dd_matrix * m1, dd_matrix * m2, dd_matrix * r )
             APE( r, i, j ) = APE( m1, i, j ) - APE( m2, i, j );
     
     return OK;
+
+}
+
+/* Utility */
+dd_error dd_print_matrix( dd_matrix * m ) 
+{
+
+    for( matrix_dimension i = 0; i < m->row; ++i )
+    {    
+        for( matrix_dimension j = 0; j < m->col; ++j )
+        {
+            printf( PRI_MATRIX_TYPE " \t",  APE( m, i, j ) );
+        }
+
+        printf( "\r\n" );
+    
+    }
 
 }

@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "dd_matrix_operations.h"
 
-#define ROWS 2
-#define COLS 2
+#define ROWS 3
+#define COLS 3
 
 static matrix_type data1[ROWS * COLS]; 
 static matrix_type data2[ROWS * COLS]; 
@@ -25,8 +25,8 @@ void main( void )
     for( matrix_dimension i = 0; i < matrix1.row; i++ ) 
         for( matrix_dimension j = 0; j < matrix1.col; j++ )
         { 
-            ACCESS_ELEMENT( matrix1, i, j ) = i * j + j;
-            AE( matrix2, i, j ) = i * j + j;
+            ACCESS_ELEMENT( matrix1, i, j ) = i * matrix2.row + j;
+            AE( matrix2, i, j ) = i * matrix2.row + j;
         }
     
 
@@ -37,4 +37,8 @@ void main( void )
     printf("The element (1,1) is: %f\r\n", AE( matrix2, 1, 1 ) );
     dd_diff_matrix( &matrix2, &matrix1, &matrix2);
     printf("The element (1,1) is: %f\r\n", AE( matrix2, 1, 1 ) );
+
+    printf("\r\n2.Print Test.\n\r");
+    dd_print_matrix( &matrix2 );
+
 }

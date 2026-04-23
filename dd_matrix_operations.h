@@ -1,6 +1,8 @@
 #ifndef DD_MATRIX_OPERATIONS_H
 #define DD_MATRIX_OPERATIONS_H
 
+#include "stdio.h"
+
 #include "dd_matrix.h"
 #include "dd_matrix_error.h"
 
@@ -13,6 +15,7 @@
 dd_error dd_sum_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
 dd_error dd_diff_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
 
-
+/* Utility */
+dd_error dd_print_matrix( dd_matrix * );
 
 #endif
