@@ -2,14 +2,17 @@
 #define DD_MATRIX_OPERATIONS_H
 
 #include "dd_matrix.h"
+#include "dd_matrix_error.h"
 
 #define ACCESS_ELEMENT( m, x, y ) ( (m).p[ (x) * (m).col + (y) ] )
 #define AE( m, x, y ) ( (m).p[ (x) * (m).col + (y) ] )
 #define ACCESS_POINTED_ELEMENT( m, x, y ) ( (m)->p[ (x) * (m)->col + (y) ] ) 
 #define APE( m, x, y ) ( (m)->p[ (x) * (m)->col + (y) ] ) 
 
-void dd_sum_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
-void dd_diff_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
+/* Matrix operations */
+dd_error dd_sum_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
+dd_error dd_diff_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
+
 
 
 #endif
