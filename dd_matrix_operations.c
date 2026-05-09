@@ -1,5 +1,18 @@
 #include "dd_matrix_operations.h"
 
+
+/* Matrix initialization */
+dd_error dd_init_matrix( dd_matrix * m, matrix_type val ) 
+{
+    if( !m ) return MATRIX_NULL_POINTER;
+    if( !val ) val = 0;
+
+    for( matrix_dimension i = 0; i < m->row; ++i )
+        for( matrix_dimension j = 0; j < m->col; ++j )
+            APE( m, i, j ) = val;
+
+}
+
 /* Matrix operations */
 dd_error dd_sum_matrix( dd_matrix * m1, dd_matrix * m2, dd_matrix * r ) 
 {

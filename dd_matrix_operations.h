@@ -11,6 +11,9 @@
 #define ACCESS_POINTED_ELEMENT( m, x, y ) ( (m)->p[ (x) * (m)->col + (y) ] ) 
 #define APE( m, x, y ) ( (m)->p[ (x) * (m)->col + (y) ] ) 
 
+/* Matrix initialization */
+dd_error dd_init_matrix( dd_matrix *, matrix_type );
+
 /* Matrix operations */
 dd_error dd_sum_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
 dd_error dd_diff_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
