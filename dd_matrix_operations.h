@@ -20,6 +20,7 @@ dd_error dd_sum_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
 dd_error dd_diff_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
 dd_error dd_mul_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
 dd_error dd_scal_mul_matrix( dd_matrix *, matrix_type );
+dd_error dd_trans_matrix( dd_matrix *, dd_matrix * );
 
 /* Utility */
 dd_error dd_print_matrix( dd_matrix * );

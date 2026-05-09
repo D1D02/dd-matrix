@@ -78,4 +78,9 @@ void main( void )
     dd_scal_mul_matrix( &matrix3, 10 );
     dd_print_matrix( &matrix3 );
 
+
+    printf("4.Test for matrix transpose.\n\r");
+    dd_trans_matrix( &matrix2, &matrix3 );
+    dd_print_matrix( &matrix3 );
+
 }

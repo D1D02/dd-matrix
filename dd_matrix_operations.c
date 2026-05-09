@@ -96,6 +96,20 @@ dd_error dd_scal_mul_matrix( dd_matrix * m, matrix_type val )
 
 }
 
+dd_error dd_trans_matrix( dd_matrix * m1, dd_matrix * m2 )
+{
+    if( !m1 || !m2 ) return MATRIX_NULL_POINTER; 
+    if( ( m1->row != m2->col ) || ( m1->col != m2->row ) )
+        return ILLEGAL_DIMENSION;
+
+    for( matrix_dimension i = 0; i < m1->row; ++i )
+        for( matrix_dimension j = 0; j < m1->col; ++j )
+            APE( m2, j, i ) = APE( m1, i, j );
+
+    return OK;   
+
+}
+
 /* Utility */
 dd_error dd_print_matrix( dd_matrix * m ) 
 {
