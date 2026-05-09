@@ -13,6 +13,7 @@
 
 /* Matrix initialization */
 dd_error dd_init_matrix( dd_matrix *, matrix_type );
+dd_error dd_init_identity_matrix( dd_matrix * );
 
 /* Matrix operations */
 dd_error dd_sum_matrix( dd_matrix *, dd_matrix *, dd_matrix * );

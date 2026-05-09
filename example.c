@@ -29,9 +29,16 @@ dd_matrix matrix2 = {
 void main( void )
 {
     printf("1.Test for matrix initialization.\n\r");
+    printf("1.1.Matrix filled with 10.\n\r");
     dd_init_matrix( &matrix0, 10 );
     dd_print_matrix( &matrix0 );
 
+    printf("1.2.Identity Matrix.\n\r");
+    dd_init_identity_matrix( &matrix0 );
+    dd_print_matrix( &matrix0 );
+
+
+    printf("1.3.Example Matrix.\n\r");
     for( matrix_dimension i = 0; i < matrix1.row; i++ ) 
         for( matrix_dimension j = 0; j < matrix1.col; j++ )
         { 

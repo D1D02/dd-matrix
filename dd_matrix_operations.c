@@ -4,12 +4,33 @@
 /* Matrix initialization */
 dd_error dd_init_matrix( dd_matrix * m, matrix_type val ) 
 {
+
     if( !m ) return MATRIX_NULL_POINTER;
     if( !val ) val = 0;
 
     for( matrix_dimension i = 0; i < m->row; ++i )
         for( matrix_dimension j = 0; j < m->col; ++j )
             APE( m, i, j ) = val;
+
+    return OK;
+
+}
+
+dd_error dd_init_identity_matrix( dd_matrix * m )
+{
+
+    if( !m ) return MATRIX_NULL_POINTER;
+
+    for( matrix_dimension i = 0; i < m->row; ++i )
+        for( matrix_dimension j = 0; j < m->col; ++j )
+        {
+
+            if( i == j ){ APE( m, i, j ) = 1; }
+            else{ APE( m, i, j ) = 0; }
+            
+        }
+
+    return OK;
 
 }
 
@@ -60,5 +81,7 @@ dd_error dd_print_matrix( dd_matrix * m )
         printf( "\r\n" );
     
     }
+
+    return OK;
 
 }
