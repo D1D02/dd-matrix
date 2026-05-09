@@ -7,6 +7,7 @@
 static matrix_type data0[ROWS * COLS]; 
 static matrix_type data1[ROWS * COLS]; 
 static matrix_type data2[ROWS * COLS]; 
+static matrix_type data3[ROWS * COLS]; 
 
 dd_matrix matrix0 = {
     .p = data0,
@@ -26,8 +27,15 @@ dd_matrix matrix2 = {
     .col = COLS
 };
 
+dd_matrix matrix3 = {
+    .p = data3,
+    .row = ROWS,
+    .col = COLS
+};
+
 void main( void )
 {
+
     printf("1.Test for matrix initialization.\n\r");
     printf("1.1.Matrix filled with 10.\n\r");
     dd_init_matrix( &matrix0, 10 );
@@ -49,13 +57,23 @@ void main( void )
 
     printf("The element (1,1) is: %f\r\n", ACCESS_ELEMENT( matrix1, 1, 1 ) );
 
+
     printf("\r\n2.Test for matrices sum and difference.\n\r");
     dd_sum_matrix( &matrix1, &matrix2, &matrix2);
     printf("The element (1,1) is: %f\r\n", AE( matrix2, 1, 1 ) );
     dd_diff_matrix( &matrix2, &matrix1, &matrix2);
     printf("The element (1,1) is: %f\r\n", AE( matrix2, 1, 1 ) );
 
-    printf("\r\n2.Print Test.\n\r");
-    dd_print_matrix( &matrix2 );
+
+    printf("3.Test for matrix multiplication.\n\r");
+    printf("3.1.Identical Matrices.\n\r");
+    dd_init_matrix( &matrix3, 0 );
+    dd_mul_matrix( &matrix2, &matrix1, &matrix3 );
+    dd_print_matrix( &matrix3 );
+    printf("3.2.Identity Matrix.\n\r");
+    dd_init_matrix( &matrix3, 0 );
+    dd_mul_matrix( &matrix2, &matrix0, &matrix3 );
+    dd_print_matrix( &matrix3 );
+    
 
 }
