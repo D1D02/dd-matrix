@@ -83,6 +83,19 @@ dd_error dd_mul_matrix( dd_matrix * m1, dd_matrix * m2, dd_matrix * r )
 
 }
 
+dd_error dd_scal_mul_matrix( dd_matrix * m, matrix_type val ) 
+{
+    if( !m ) return MATRIX_NULL_POINTER; 
+    if( !val ) val = 1;
+
+    for( matrix_dimension i = 0; i < m->row; ++i )
+        for( matrix_dimension j = 0; j < m->col; ++j )
+            APE( m, i, j ) = val * APE( m, i, j );
+
+    return OK;   
+
+}
+
 /* Utility */
 dd_error dd_print_matrix( dd_matrix * m ) 
 {

@@ -19,6 +19,7 @@ dd_error dd_init_identity_matrix( dd_matrix * );
 dd_error dd_sum_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
 dd_error dd_diff_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
 dd_error dd_mul_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
+dd_error dd_scal_mul_matrix( dd_matrix *, matrix_type );
 
 /* Utility */
 dd_error dd_print_matrix( dd_matrix * );

@@ -74,6 +74,8 @@ void main( void )
     dd_init_matrix( &matrix3, 0 );
     dd_mul_matrix( &matrix2, &matrix0, &matrix3 );
     dd_print_matrix( &matrix3 );
-    
+    printf("3.2.Scalar Matrix.\n\r");
+    dd_scal_mul_matrix( &matrix3, 10 );
+    dd_print_matrix( &matrix3 );
 
 }
