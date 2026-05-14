@@ -110,6 +110,27 @@ dd_error dd_trans_matrix( dd_matrix * m1, dd_matrix * m2 )
 
 }
 
+dd_error dd_inv_matrix( dd_matrix * m, dd_matrix * inv )
+{
+    if( !m || !inv ) return MATRIX_NULL_POINTER; 
+    if( ( m->row != m->col ) || ( m->row != inv->row ) || ( m->col != inv->col ) )
+        return ILLEGAL_DIMENSION;
+
+    #ifdef MATRIX_2x2_INVERSION
+    matrix_type det = APE( m, 0, 0 ) * APE( m, 1, 1 ) - APE( m, 0, 1 ) * APE( m, 1, 0 );
+
+    APE( inv, 0, 0 ) = APE( m, 1, 1 ); APE( inv, 0, 1 ) -= APE( m, 0, 1 );
+    APE( inv, 1, 0 ) -= APE( m, 1, 0 ); APE( inv, 1, 1 ) = APE( m, 0, 0 );
+
+    if( det == 0 ) return NULL_DETERMINANT;
+
+    dd_scal_mul_matrix( inv, 1 / det );
+    #endif
+
+    return OK;
+
+}
+
 /* Utility */
 dd_error dd_print_matrix( dd_matrix * m ) 
 {

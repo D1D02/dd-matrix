@@ -6,6 +6,8 @@
 #include "dd_matrix.h"
 #include "dd_matrix_error.h"
 
+#define MATRIX_2x2_INVERSION //Comment this line if you don't need 2x2 matrix inversion
+
 #define ACCESS_ELEMENT( m, x, y ) ( (m).p[ (x) * (m).col + (y) ] )
 #define AE( m, x, y ) ( (m).p[ (x) * (m).col + (y) ] )
 #define ACCESS_POINTED_ELEMENT( m, x, y ) ( (m)->p[ (x) * (m)->col + (y) ] ) 
@@ -21,6 +23,7 @@ dd_error dd_diff_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
 dd_error dd_mul_matrix( dd_matrix *, dd_matrix *, dd_matrix * );
 dd_error dd_scal_mul_matrix( dd_matrix *, matrix_type );
 dd_error dd_trans_matrix( dd_matrix *, dd_matrix * );
+dd_error dd_inv_matrix( dd_matrix *, dd_matrix * );
 
 /* Utility */
 dd_error dd_print_matrix( dd_matrix * );
