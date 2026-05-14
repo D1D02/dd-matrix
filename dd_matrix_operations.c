@@ -117,14 +117,19 @@ dd_error dd_inv_matrix( dd_matrix * m, dd_matrix * inv )
         return ILLEGAL_DIMENSION;
 
     #ifdef MATRIX_2x2_INVERSION
-    matrix_type det = APE( m, 0, 0 ) * APE( m, 1, 1 ) - APE( m, 0, 1 ) * APE( m, 1, 0 );
+    if( m->row == 2 )
+    {
+        matrix_type det = APE( m, 0, 0 ) * APE( m, 1, 1 ) - APE( m, 0, 1 ) * APE( m, 1, 0 );
 
-    APE( inv, 0, 0 ) = APE( m, 1, 1 ); APE( inv, 0, 1 ) -= APE( m, 0, 1 );
-    APE( inv, 1, 0 ) -= APE( m, 1, 0 ); APE( inv, 1, 1 ) = APE( m, 0, 0 );
+        APE( inv, 0, 0 ) = APE( m, 1, 1 ); APE( inv, 0, 1 ) -= APE( m, 0, 1 );
+        APE( inv, 1, 0 ) -= APE( m, 1, 0 ); APE( inv, 1, 1 ) = APE( m, 0, 0 );
 
-    if( det == 0 ) return NULL_DETERMINANT;
+        if( det == 0 ) return NULL_DETERMINANT;
 
-    dd_scal_mul_matrix( inv, 1 / det );
+        dd_scal_mul_matrix( inv, 1 / det );
+
+        return OK;
+    }
     #endif
 
     return OK;
