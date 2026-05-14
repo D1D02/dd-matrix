@@ -6,6 +6,7 @@ typedef enum {
     OK,
     MATRIX_NULL_POINTER,
     ILLEGAL_DIMENSION, //Matrices dimensions are not correct
+    NULL_DETERMINANT
 } dd_error;
 
 #endif
