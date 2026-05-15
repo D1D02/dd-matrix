@@ -25,6 +25,10 @@ dd_error dd_scal_mul_matrix( dd_matrix *, matrix_type );
 dd_error dd_trans_matrix( dd_matrix *, dd_matrix * );
 dd_error dd_inv_matrix( dd_matrix *, dd_matrix * );
 
+
+void dd_forward_substitution( matrix_type *, matrix_type *, matrix_dimension, matrix_dimension );
+void dd_backward_substitution( matrix_type *, matrix_type *, matrix_type *, matrix_dimension );
+
 /* Utility */
 dd_error dd_print_matrix( dd_matrix * );
 

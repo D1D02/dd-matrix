@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "dd_matrix_operations.h"
+#include "dd_matrix_static.h"
 
 #define ROWS 3
 #define COLS 3
@@ -82,5 +83,9 @@ void main( void )
     printf("4.Test for matrix transpose.\n\r");
     dd_trans_matrix( &matrix2, &matrix3 );
     dd_print_matrix( &matrix3 );
+
+    printf("5.Test for matrix inversion.\n\r");
+    dd_inv_matrix( &inverse_3, &inverse_3 );
+    dd_print_matrix( &inverse_3 );
 
 }
