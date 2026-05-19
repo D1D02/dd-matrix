@@ -30,6 +30,16 @@ In this section you will find all the functions that are implemented on the bran
 ### Operations
 - *dd_sum_matrix**, a function that takes in two addends matrices and one result matrix, and the addition is stored in result matrix.
 - *dd_diff_matrix**, a function that takes in two addends matrices and one result matrix, and the subtraction is stored in result matrix.
+- *dd_mul_matrix**, a function that takes in two factor matrices and one result matrix, and the multiplication is stored in result matrix.
+- *dd_scal_mul_matrix**, a function that takes in a matrix, a scalar and one result matrix, and the scalar multiplication is stored in result matrix.
+- *dd_trans_matrix**, a function that takes in an input matrix and one result matrix, and the transpose is stored in result matrix.
+- *dd_inv_matrix**, a function that takes in an input matrix and one result matrix, and the inverse is stored in result matrix.
 
+### Utility
+- *dd_print_matrix**, a function that takes in an input matrix and print the matrix on the standard output.
 
-Helped by [@antonio-petrillo](https://github.com/antonio-petrillo)
+### Matrix Initialization
+- *dd_init_matrix‎**, a function that takes in an input matrix and a scalar, and the input matrix is initialized with the scalar value.
+- *dd_init_identity_matrix‎‎**, a function that takes in an input matrix, and the input matrix is transformed in an identity matrix.
+
+Revisioned by [@antonio-petrillo](https://github.com/antonio-petrillo)
